@@ -1,0 +1,85 @@
+1. Explique a diferença entre variáveis do tipo string e do tipo inteiro em PHP.
+    - Variáveis do tipo string, são variáveis nas quais são armazenadas informações do tipo "string" que é o tipo para sequência de caracteres.
+    - inteiro é um tipo no qual estão inseridos os números inteiros. Sendo assim variáveis do tipo inteiro, guardam estas informações.
+
+2. Quais são os operadores lógicos mais comuns em PHP e como eles são utilizados em expressões condicionais?
+    Aritméticos: +, -, *, /, %
+        - (adição, subtração, multiplicação, divisão, módulo)
+
+    Comparação: ==, !=, <, >, <=, >=
+        - (igual a, diferente de, menor que, maior que, menor ou igual a, maior ou igual a)
+
+    Lógicos: &&, ||, ! 
+        - (e lógico, ou lógico, não lógico).
+
+
+3. Como você definiria a tipagem dinâmica em PHP? Dê um exemplo.
+    - A tipagem dinâmica se refere a uma tipagem qual ocorre no momento de utilização da variável, diferente da tipagem estática qual se é inferido o tipo da variavel em sua declaração.
+
+    Tipagem dinâmica:
+        PHP:
+            $x = 10; -> Aqui a variavel "x" é do tipo "inteiro"
+            $x = 1.10; -> Aqui a variavel "x" é do tipo "float"
+            $x = "20"; -> Aqui a variavel "x" é do tipo "string"
+
+        Java:
+            int x = 10; ->  Aqui a variavel "x" é do tipo "inteiro"
+            x = "20"; ->  Aqui apresentará erro, pois, está sendo enviado um "string" a uma variável do tipo "int".
+
+
+4. Explique o propósito da estrutura de controle if e forneça um exemplo de uso.
+    - O IF/ELSE é uma estrutura de controle/decisão que permite que o fluxo do programa seja alterado com base em condições específicas.
+ 
+5. O que é o operador de módulo (%) e como ele pode ser útil em PHP?
+    - O operador de módulo (%) retorna o restante da divisão entre dois números inteiros.
+    - Ele é útil, por exemplo, para verificar se um número é par ou ímpar, identificar múltiplos ou para criar ciclos repetitivos em estruturas como loops.
+
+    Exemplo:
+        $numero = 7;
+        if ($numero % 2 == 0) {
+            echo "Número par";
+        } else {
+            echo "Número ímpar";
+        }
+
+6. Qual é a importância do ponto e vírgula (;) no final de uma instrução PHP?
+    - O ponto e vírgula (;) é utilizado em PHP para indicar o fim de uma instrução.
+    - Sem ele, o interpretador PHP não sabe onde termina uma linha de comando, resultando em erro de sintaxe.
+
+7. Descreva o funcionamento da estrutura de controle switch e forneça um exemplo prático.
+    - A estrutura switch é utilizada para tomar decisões com base no valor de uma variável.
+    - Ela é uma alternativa ao uso de múltiplos if/else, tornando o código mais legível quando há várias comparações possíveis.
+
+    Exemplo:
+        $dia = 3;
+        switch ($dia) {
+            case 1:
+                echo "Domingo";
+                break;
+            case 2:
+                echo "Segunda-feira";
+                break;
+            case 3:
+                echo "Terça-feira";
+                break;
+            default:
+                echo "Dia inválido";
+        }
+
+8. Por que é importante escolher nomes de variáveis significativas ao programar em PHP?
+    - Utilizar nomes de variáveis significativas torna o código mais legível e fácil de entender.
+    - Facilita a manutenção e o trabalho em equipe, pois o propósito da variável fica claro sem precisar de comentários extras.
+
+9. Como você concatenaria duas strings em PHP?
+    - Em PHP, a concatenação de strings é feita utilizando o operador ponto (.).
+    - Ele une duas ou mais strings em uma única.
+
+    Exemplo:
+        $nome = "Maria";
+        $sobrenome = "Silva";
+        $nomeCompleto = $nome . " " . $sobrenome;
+        echo $nomeCompleto; // saída: Maria Silva
+
+10. Explique o conceito de variáveis de tipo booleano e forneça um exemplo de utilização.
+    - Variáveis booleanas armazenam apenas dois valores: true (verdadeiro) ou false (falso).
+    - São muito utilizadas em estruturas condicionais para tomada de decisões.

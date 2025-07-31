@@ -1,0 +1,22 @@
+1. Funções predefinidas (ou internas) são aquelas já incluídas no núcleo da linguagem PHP, prontas para serem utilizadas sem a necessidade de implementação.
+    - Funções predefinidas (ou internas) são aquelas já incluídas no núcleo da linguagem PHP, prontas para serem utilizadas sem a necessidade de implementação.
+    - Elas agilizam o desenvolvimento e evitam a reescrita de lógicas comuns.
+
+2. Descreva a importância de utilizar parâmetros em funções. Dê um exemplo prático de uma função com parâmetros.
+        - Os parâmetros permitem que uma função seja reutilizada com diferentes valores, tornando o código mais modular, reutilizável e organizado.
+        - Eles são usados para passar informações para dentro da função.
+
+
+3. Compare as funções personalizadas e predefinidas em termos de definição, chamada e aplicação em projetos PHP.
+    - Funções predefinidas: já estão disponíveis no PHP, como strlen(), array_push(), date(). Não precisam ser definidas manualmente.
+    - Funções personalizadas: criadas pelo desenvolvedor para realizar tarefas específicas do sistema, com nomes e comportamentos definidos conforme a necessidade.
+    - Ambas são chamadas da mesma forma, porém as personalizadas exigem que sejam definidas antes do uso.
+
+4. Liste três funções predefinidas do PHP utilizadas para manipulação de strings e explique brevemente o que cada uma realiza.
+    - strlen($str): Retorna o tamanho da string (quantidade de caracteres).
+    - strtolower($str): Converte todos os caracteres da string para letras minúsculas.
+    - substr($str, $inicio, $comprimento): Retorna parte da string, iniciando na posição definida e com a quantidade de caracteres especificada.
+
+5. Explique como a função array_push() pode ser útil na manipulação de arrays em PHP. Dê um exemplo prático.
+    - A função array_push() adiciona um ou mais elementos no final de um array.
+    - É útil quando se deseja inserir dados dinamicamente sem reescrever o array manualmente.

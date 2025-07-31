@@ -1,0 +1,39 @@
+1. Loops em PHP – for vs while
+    - O loop `for` é ideal quando se sabe exatamente quantas vezes o bloco de código precisa ser executado.
+    - Já o loop `while` é mais indicado quando o número de repetições depende de uma condição que será avaliada dinamicamente.
+    - Por exemplo, `for` é útil em contagens fixas como: `for ($i = 0; $i < 10; $i++)`.
+    - O `while` se aplica melhor em situações como leitura de arquivos ou espera por uma condição externa: `while (!feof($arquivo))`.
+
+2. Loop Do-While em PHP
+    - O `do-while` é utilizado quando queremos garantir que o bloco de código será executado ao menos uma vez antes da verificação da condição.
+    - É preferível, por exemplo, em menus interativos no terminal, onde a opção do usuário é solicitada e depois validada:
+        do {
+            echo "Digite uma opção: ";
+            $opcao = trim(fgets(STDIN));
+        } while ($opcao != "sair");
+
+3. Foreach com Arrays Associativos
+    - O `foreach` é utilizado para percorrer arrays, sendo especialmente útil com arrays associativos.
+    - Permite acessar a chave e o valor de cada elemento de forma simples:
+        $dados = ["nome" => "João", "idade" => 25];
+        foreach ($dados as $chave => $valor) {
+            echo "$chave: $valor\n";
+        }
+    - Isso torna a leitura e manipulação de dados muito mais intuitiva e legível.
+
+4. Manipulação de Exceções – Lançamento
+    - "Lançar uma exceção" em PHP significa utilizar a palavra-chave `throw` para indicar que ocorreu um erro durante a execução.
+    - Isso é útil para interromper o fluxo normal e delegar o tratamento para um bloco `try-catch`.
+    - Exemplo prático:
+        if ($divisor == 0) {
+            throw new Exception("Divisão por zero não permitida.");
+        }
+    - Esse mecanismo promove um código mais robusto e facilita a depuração.
+
+5. Hierarquia de Exceções em PHP
+    - Estabelecer uma hierarquia clara de exceções personalizadas permite identificar e tratar diferentes tipos de erros de forma específica.
+    - É possível criar classes que estendem `Exception`, como `ValidacaoException` ou `ConexaoException`.
+    - Assim, é possível capturar erros por tipo:
+        catch (ValidacaoException $e) { ... }
+        catch (ConexaoException $e) { ... }
+    - Isso organiza o código, melhora a manutenção e facilita a expansão do sistema.

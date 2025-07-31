@@ -1,0 +1,31 @@
+Data: 31/07/2025  
+Nome: Phelipe Leandro Pereira  
+
+Teórico: Diferença entre Arrays Indexados e Associativos  
+● Arrays indexados utilizam números inteiros como índices, geralmente começando do 0.  
+  Exemplo: $nomes = ["Ana", "João", "Carlos"];  
+● Arrays associativos utilizam chaves nomeadas como índices, permitindo representar dados com significado.  
+  Exemplo: $aluno = ["nome" => "Ana", "idade" => 20];  
+● A principal diferença é a forma de acesso: enquanto indexados são ideais para listas sequenciais, os associativos funcionam melhor para representar objetos ou registros com atributos nomeados.
+
+------------------------------------------------------------
+
+Teórico: Vantagens das Funções de Manipulação de Arrays  
+● 1. Eficiência e simplicidade: Funções como `array_merge`, `array_filter`, `sort` e `array_map` permitem realizar operações complexas com poucas linhas de código.  
+● 2. Performance: Como são funções nativas da linguagem e escritas em C, geralmente são otimizadas e mais rápidas do que soluções manuais com loops.
+
+------------------------------------------------------------
+
+Teórico: Arrays Multidimensionais vs. Matrizes Bidimensionais  
+● Arrays multidimensionais são arrays que contêm outros arrays como elementos, podendo ter duas ou mais dimensões.  
+  Exemplo: $array[0][1] = 10;  
+● Matrizes bidimensionais são um tipo específico de array multidimensional com apenas duas dimensões — frequentemente usados para representar tabelas.  
+● Usamos matrizes bidimensionais quando lidamos com dados em linhas e colunas (como planilhas).  
+  Arrays multidimensionais mais complexos são usados, por exemplo, para representar objetos aninhados, coleções de coleções, ou estruturas JSON.
+
+------------------------------------------------------------
+
+Teórico: Uso Prático do Sort em Arrays  
+● A função `sort()` é útil quando queremos ordenar um array de forma crescente com base nos valores.  
+● Exemplo prático: um sistema de e-commerce pode usar `sort()` para ordenar os preços dos produtos antes de exibi-los ao usuário.  
+● Ela reorganiza os elementos e reindexa o array, sendo excelente para dados não associados (arrays indexados).
