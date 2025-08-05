@@ -1,0 +1,51 @@
+Data: 04/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Modos de Abertura de Arquivos em PHP
+● 'r' (read): abre um arquivo somente para leitura. O ponteiro é colocado no início do arquivo.
+  Exemplo: ideal para ler logs ou configurações sem a intenção de modificar o conteúdo.
+  $arquivo = fopen("config.txt", "r");
+
+● 'w' (write): abre um arquivo para escrita, truncando o conteúdo existente (ou seja, apaga tudo). Se o arquivo não existir, ele será criado.
+  Exemplo: útil para sobrescrever dados antigos com novos, como gerar relatórios diários.
+  $arquivo = fopen("relatorio.txt", "w");
+
+● 'a' (append): abre um arquivo para escrita no final do conteúdo, preservando os dados existentes. Se o arquivo não existir, ele será criado.
+  Exemplo: apropriado para adicionar registros em um log de eventos sem apagar os dados anteriores.
+  $arquivo = fopen("log.txt", "a");
+
+------------------------------------------------------------
+
+Teórico: Diferença entre file() e file_get_contents()
+● A função file() lê todo o conteúdo de um arquivo e retorna um array, onde cada linha corresponde a um elemento do array.
+● Já file_get_contents() retorna o conteúdo inteiro do arquivo como uma única string.
+● file() é útil quando se deseja manipular o conteúdo linha por linha, como ao processar um CSV simples.
+● file_get_contents() é mais apropriado para leitura rápida de arquivos como JSON ou HTML onde o conteúdo será tratado como um bloco único.
+
+------------------------------------------------------------
+
+Teórico: JSON em PHP
+● Para manipular JSON em PHP, usamos principalmente file_get_contents() para ler o conteúdo do arquivo e json_decode() para convertê-lo em um array ou objeto PHP.
+  Exemplo:
+  $json = file_get_contents("dados.json");
+  $dados = json_decode($json, true);
+
+● Para salvar dados no formato JSON, usamos json_encode() e file_put_contents().
+  Exemplo:
+  $novoJson = json_encode($dados);
+  file_put_contents("dados.json", $novoJson);
+
+● Esse processo é muito usado para salvar preferências, configurações ou transferir dados entre sistemas.
+
+------------------------------------------------------------
+
+Teórico: Vantagens do flock()
+● A função flock() é usada para implementar bloqueio de arquivos, evitando que múltiplos processos acessem e modifiquem simultaneamente o mesmo arquivo.
+● É essencial em ambientes onde concorrência pode causar corrupção de dados, como em logs, arquivos de cache ou bancos de dados em texto.
+● Exemplo: ao escrever em um arquivo de log compartilhado, o uso de flock() garante que um processo termine de escrever antes de outro começar.
+  $fp = fopen("log.txt", "a");
+  if (flock($fp, LOCK_EX)) {
+      fwrite($fp, "Nova entrada\n");
+      flock($fp, LOCK_UN);
+  }
+  fclose($fp);
