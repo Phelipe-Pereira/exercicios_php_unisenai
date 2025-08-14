@@ -1,0 +1,53 @@
+Data: 14/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Conceito de Sessão em Desenvolvimento Web
+● Sessão é um mecanismo que permite armazenar dados do usuário no servidor durante sua navegação.
+● Funciona através de um identificador único (session ID) armazenado em cookie ou URL.
+● Importante para controle de usuários porque:
+  1. Mantém estado entre requisições HTTP (stateless)
+  2. Permite autenticação e autorização
+  3. Armazena dados temporários do usuário
+  4. Controla acesso a páginas protegidas
+  5. Personaliza experiência do usuário
+
+------------------------------------------------------------
+
+Teórico: Diferença entre session_start() e session_regenerate_id()
+● session_start(): Inicia ou retoma uma sessão existente, criando o array $_SESSION.
+  Deve ser chamado antes de qualquer saída HTML e em todas as páginas que usam sessão.
+● session_regenerate_id(): Cria um novo ID de sessão, mantendo os dados existentes.
+  Usado para prevenir ataques de session fixation, forçando um novo identificador.
+● Diferença: session_start() inicia a sessão, session_regenerate_id() renova o ID de segurança.
+
+------------------------------------------------------------
+
+Teórico: Por que Usar HTTPS com Informações de Sessão
+● HTTPS é recomendado porque:
+  1. Criptografa dados transmitidos, incluindo cookies de sessão
+  2. Previne interceptação de session ID por atacantes
+  3. Protege contra ataques man-in-the-middle
+  4. Garante integridade dos dados de sessão
+  5. É requisito para cookies seguros (flag Secure)
+● Sem HTTPS, session IDs podem ser capturados em redes públicas ou comprometidas.
+
+------------------------------------------------------------
+
+Teórico: Finalidade do Parâmetro HttpOnly em Cookies
+● HttpOnly impede que cookies sejam acessados via JavaScript (document.cookie).
+● Propósito: Prevenir ataques XSS de roubar cookies de sessão.
+● Segurança: Mesmo se um atacante injetar JavaScript malicioso, não conseguirá acessar o cookie.
+● Implementação: session_set_cookie_params() ou configuração no php.ini.
+● Exemplo: session_set_cookie_params(0, '/', '', true, true); // HttpOnly e Secure.
+
+------------------------------------------------------------
+
+Teórico: Processo de Regeneração de Sessão
+● Regeneração de sessão é o processo de criar um novo session ID mantendo os dados.
+● Processo: session_regenerate_id(true) - cria novo ID e remove o antigo.
+● Por que é recomendada:
+  1. Previne session fixation (ataque onde ID é conhecido antecipadamente)
+  2. Aumenta segurança após login bem-sucedido
+  3. Reduz risco de session hijacking
+  4. Boa prática de segurança em aplicações web
+● Deve ser usada após autenticação bem-sucedida e em intervalos regulares.

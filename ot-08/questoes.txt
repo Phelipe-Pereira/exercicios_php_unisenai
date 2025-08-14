@@ -1,0 +1,47 @@
+Data: 14/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Diferença entre os Métodos GET e POST
+● GET: Envia dados através da URL, visíveis na barra de endereços. Limitado a 2048 caracteres.
+  Ideal para consultas, filtros e dados não sensíveis. Dados ficam no histórico do navegador.
+● POST: Envia dados no corpo da requisição HTTP, não visíveis na URL. Sem limite de tamanho.
+  Ideal para envio de dados sensíveis, uploads de arquivos e submissão de formulários.
+● GET deve ser usado para dados públicos, POST para dados privados ou sensíveis.
+
+------------------------------------------------------------
+
+Teórico: Importância da Validação de Dados
+● Validação de dados é crucial para:
+  1. Segurança: Previne ataques como SQL Injection, XSS e CSRF
+  2. Integridade: Garante que dados estejam no formato esperado
+  3. Funcionalidade: Evita erros de processamento e comportamento inesperado
+  4. Experiência do usuário: Fornece feedback claro sobre erros
+● Sem validação, aplicações ficam vulneráveis a manipulação maliciosa de dados.
+
+------------------------------------------------------------
+
+Teórico: Principais Riscos em Uploads de Arquivos
+● 1. Execução de Código Malicioso: Arquivos com extensões executáveis (.php, .exe) podem ser executados pelo servidor.
+● 2. Sobrescrita de Arquivos: Nomes de arquivo podem conflitar e sobrescrever arquivos importantes do sistema.
+● 3. Consumo de Recursos: Arquivos muito grandes podem esgotar espaço em disco e memória do servidor.
+● 4. Upload de Vírus: Arquivos maliciosos podem infectar o servidor ou outros usuários.
+● 5. Ataques de Denial of Service: Múltiplos uploads simultâneos podem sobrecarregar o servidor.
+
+------------------------------------------------------------
+
+Teórico: Qual a Finalidade do Diretório Temporário (tmp_name)?
+● O diretório temporário (tmp_name) é onde o servidor web armazena temporariamente arquivos enviados via upload.
+● Propósito: Permitir que o PHP processe e valide o arquivo antes de movê-lo para o local final.
+● Características: Arquivos são automaticamente removidos após o script PHP terminar.
+● Uso: Deve-se sempre mover o arquivo de tmp_name para o diretório de destino usando move_uploaded_file().
+● Segurança: Evita que arquivos maliciosos permaneçam no servidor se a validação falhar.
+
+------------------------------------------------------------
+
+Teórico: Como Evitar Ataques de Injeção em Campos de Formulário
+● 1. Prepared Statements: Usar prepared statements para consultas SQL, separando dados da estrutura.
+● 2. Escape de Caracteres: Usar htmlspecialchars() para exibir dados, prevenindo XSS.
+● 3. Validação de Tipo: Verificar se dados estão no formato esperado (email, número, etc.).
+● 4. Sanitização: Remover caracteres perigosos ou converter para formato seguro.
+● 5. Whitelist: Aceitar apenas caracteres ou padrões específicos, rejeitando o resto.
+● 6. Validação no Servidor: Sempre validar no servidor, nunca confiar apenas na validação do cliente.

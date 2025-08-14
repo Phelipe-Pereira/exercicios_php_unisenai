@@ -1,0 +1,69 @@
+Data: 14/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Injeção de SQL e Declarações Preparadas
+● Injeção de SQL é um ataque onde o atacante insere código SQL malicioso em campos de entrada,
+  tentando manipular consultas do banco de dados para acessar, modificar ou excluir dados.
+● Declarações preparadas (prepared statements) previnem esse ataque ao:
+  1. Separar dados da estrutura SQL usando placeholders (?)
+  2. Tratar dados como parâmetros, não como código executável
+  3. Escapar automaticamente caracteres especiais
+  4. Validar tipos de dados antes da execução
+● Exemplo: "SELECT * FROM usuarios WHERE id = ?" com bind_param() é mais seguro que concatenação.
+
+------------------------------------------------------------
+
+Teórico: XSS (Cross-Site Scripting) e htmlspecialchars()
+● XSS é um ataque onde o atacante injeta scripts maliciosos em páginas web,
+  que são executados no navegador de outros usuários.
+● Tipos: Reflected XSS (dados refletidos), Stored XSS (armazenados), DOM-based XSS.
+● htmlspecialchars() converte caracteres especiais em entidades HTML:
+  < → &lt;, > → &gt;, " → &quot;, ' → &#039;, & → &amp;
+● Previne que dados sejam interpretados como HTML/JavaScript, exibindo-os como texto.
+● Uso: htmlspecialchars($dados, ENT_QUOTES, 'UTF-8') para máxima segurança.
+
+------------------------------------------------------------
+
+Teórico: Práticas para Manter Sistemas Atualizados
+● Sistema Operacional:
+  1. Habilitar atualizações automáticas
+  2. Aplicar patches de segurança regularmente
+  3. Monitorar vulnerabilidades conhecidas
+● Servidor Web (Apache/Nginx):
+  1. Manter versões atualizadas
+  2. Configurar HTTPS/TLS
+  3. Remover módulos desnecessários
+● PHP:
+  1. Atualizar para versões suportadas
+  2. Aplicar patches de segurança
+  3. Monitorar changelog oficial
+● Ferramentas: Composer, dependabot, monitoramento de CVE.
+
+------------------------------------------------------------
+
+Teórico: Configurações de Segurança no php.ini
+● display_errors = Off (produção): Oculta erros que podem expor informações sensíveis
+● log_errors = On: Registra erros em arquivo de log para debugging
+● error_reporting = E_ALL: Reporta todos os tipos de erro
+● allow_url_fopen = Off: Previne inclusão de arquivos remotos
+● allow_url_include = Off: Desabilita include de URLs
+● session.cookie_httponly = On: Previne acesso JavaScript aos cookies
+● session.cookie_secure = On: Cookies apenas via HTTPS
+● max_execution_time = 30: Limita tempo de execução de scripts
+● memory_limit = 128M: Controla uso de memória
+● upload_max_filesize = 2M: Limita tamanho de uploads
+
+------------------------------------------------------------
+
+Teórico: Importância de Firewalls e Filtros
+● Firewalls protegem aplicações PHP ao:
+  1. Controlar tráfego de rede (portas, IPs, protocolos)
+  2. Bloquear ataques DDoS e força bruta
+  3. Filtrar requisições maliciosas
+  4. Implementar rate limiting
+● Filtros de aplicação:
+  1. WAF (Web Application Firewall): Protege contra ataques web
+  2. ModSecurity: Regras específicas para Apache/Nginx
+  3. Filtros de entrada: Validação de dados
+  4. Filtros de saída: Sanitização de conteúdo
+● Benefícios: Redução de ataques, conformidade, monitoramento de segurança.

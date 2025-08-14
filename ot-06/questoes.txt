@@ -1,0 +1,38 @@
+Data: 14/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Diferença entre MySQL e MySQLi
+● MySQL (extensão antiga): Utiliza funções procedurais como mysql_connect(), mysql_query(). 
+  Foi descontinuada no PHP 7.0 devido a problemas de segurança e manutenção.
+● MySQLi (extensão moderna): Oferece interface orientada a objetos e procedural, 
+  suporte a prepared statements, transações e recursos avançados do MySQL.
+● MySQLi é preferível em projetos novos devido à segurança, performance e recursos modernos.
+● MySQL só deve ser usado em sistemas legados que não podem ser migrados.
+
+------------------------------------------------------------
+
+Teórico: Vantagens do Uso de Prepared Statements
+● 1. Segurança contra SQL Injection: Prepared statements separam dados da estrutura SQL,
+  impedindo que dados maliciosos sejam executados como código SQL.
+● 2. Performance: Consultas preparadas são compiladas uma vez e reutilizadas múltiplas vezes,
+  reduzindo overhead de parsing e otimização do banco de dados.
+● 3. Tipagem de Dados: Permite especificar tipos de dados (string, integer, etc.) 
+  garantindo conversão adequada e validação automática.
+
+------------------------------------------------------------
+
+Teórico: Por que Evitar Consultas Dinâmicas?
+● Consultas dinâmicas (concatenação direta de strings) são vulneráveis a SQL Injection,
+  permitindo que atacantes executem código SQL malicioso.
+● Prepared statements mitigam esse problema ao separar a estrutura SQL dos dados,
+  tratando dados como parâmetros e não como parte do código SQL.
+● Exemplo de consulta vulnerável: "SELECT * FROM usuarios WHERE id = " . $_GET['id']
+● Exemplo seguro: Prepared statement com bind_param() para vincular dados.
+
+------------------------------------------------------------
+
+Teórico: Utilidade do Método bind_param()
+● O método bind_param() vincula variáveis PHP aos placeholders (?) em prepared statements.
+● Permite especificar tipos de dados: 's' (string), 'i' (integer), 'd' (double), 'b' (blob).
+● Garante que dados sejam tratados corretamente pelo MySQL, evitando conversões inadequadas.
+● Exemplo: $stmt->bind_param("si", $nome, $idade) - vincula string e integer respectivamente.

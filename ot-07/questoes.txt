@@ -1,0 +1,46 @@
+Data: 14/08/2025
+Nome: Phelipe Leandro Pereira
+
+Teórico: Diferença entre Encapsulamento e Herança
+● Encapsulamento: É o princípio que oculta dados e métodos de uma classe, controlando o acesso através de modificadores (public, private, protected). 
+  Foca na proteção e organização interna da classe.
+● Herança: É o mecanismo que permite uma classe (filha) herdar propriedades e métodos de outra classe (pai), 
+  promovendo reutilização de código e hierarquia entre classes.
+● Diferença fundamental: Encapsulamento protege dados, Herança compartilha funcionalidades.
+
+------------------------------------------------------------
+
+Teórico: Vantagens de Utilizar a Herança em PHP
+● 1. Reutilização de Código: Permite que classes filhas herdem métodos e propriedades da classe pai,
+  evitando duplicação de código e facilitando manutenção.
+● 2. Hierarquia e Organização: Cria uma estrutura hierárquica clara entre classes relacionadas,
+  facilitando a compreensão e organização do código.
+● 3. Extensibilidade: Permite adicionar novas funcionalidades sem modificar código existente,
+  seguindo o princípio Open/Closed (aberto para extensão, fechado para modificação).
+
+------------------------------------------------------------
+
+Teórico: Polimorfismo em PHP
+● Polimorfismo é a capacidade de objetos de diferentes classes responderem ao mesmo método de formas diferentes.
+● Em PHP, é implementado através de:
+  - Sobrescrita de métodos (override): Classe filha redefine método da classe pai
+  - Interfaces: Múltiplas classes implementam a mesma interface
+  - Classes abstratas: Métodos abstratos que devem ser implementados pelas classes filhas
+● Exemplo: Uma interface Animal com método fazerSom(), implementada por Cachorro, Gato, etc.
+
+------------------------------------------------------------
+
+Teórico: Qual a Finalidade do Modificador private em PHP?
+● O modificador private restringe o acesso a propriedades e métodos apenas dentro da própria classe.
+● Impede acesso externo direto, forçando o uso de métodos públicos (getters/setters) para manipular dados.
+● Útil para: Proteger dados sensíveis (senhas, saldos), controlar validações, implementar lógica de negócio.
+● Exemplo: Propriedade $senha privada com método público setSenha() que valida a entrada.
+
+------------------------------------------------------------
+
+Teórico: Por que Utilizar Classes Abstratas em PHP?
+● Classes abstratas servem como "contratos" que definem estrutura comum para classes relacionadas.
+● Forçam implementação de métodos abstratos nas classes filhas, garantindo consistência.
+● Permitem implementação parcial (métodos concretos e abstratos na mesma classe).
+● Útil quando: Existe comportamento comum entre classes, mas algumas funcionalidades são específicas.
+● Diferença de interfaces: Classes abstratas podem ter implementação, interfaces apenas definem assinatura.
